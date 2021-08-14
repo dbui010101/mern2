@@ -1,0 +1,8 @@
+wget https://downloads.mongodb.com/compass/mongodb-compass_1.26.1_amd64.deb
+
+sudo dpkg -i mongodb-compass_1.26.1_amd64.deb
+
+ensuite dans etc/mongodb.conf
+changer #port = 27042
+
+sudo mongo ou sudo mongod

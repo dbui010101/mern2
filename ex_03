@@ -1,0 +1,45 @@
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      'lastname',
+      'firstname',
+      'email',
+      'phone',
+      'validated',
+      'admin'
+    ],
+    properties: {
+      lastname: {
+        bsonType: 'string',
+        description: 'must be a string and is required'
+      },
+      firstname: {
+        bsonType: 'string',
+        description: 'must be a string and is required'
+      },
+      email: {
+        bsonType: 'string',
+        pattern: '[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)+',
+        description: 'Email is required'
+      },
+      phone: {
+        bsonType: 'string',
+        pattern: '^0[1-9][0-9]{8}$',
+        description: 'phone is required'
+      },
+      validated: {
+        'enum': [
+          'in progress',
+          'validated',
+          'rejected'
+        ],
+        description: 'can only be one of the enum values and is required'
+      },
+      admin: {
+        bsonType: 'bool',
+        description: 'must be a boolean and is required'
+      }
+    }
+  }
+}
